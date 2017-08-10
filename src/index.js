@@ -17,7 +17,7 @@ export default class Sweetcherry extends React.Component {
         size: PropTypes.string,
         checked: PropTypes.bool,
         onChange: PropTypes.func,
-        name: PropTypes.string,
+        name: PropTypes.string
     };
 
     static defaultProps = {
@@ -29,7 +29,7 @@ export default class Sweetcherry extends React.Component {
         disabled: false,
         disabledOpacity: 0.5,
         speed: '0.4s',
-        size: 'default',
+        size: 'default'
     };
 
     onClick() {
@@ -40,8 +40,8 @@ export default class Sweetcherry extends React.Component {
                 target: {
                     type: 'checkbox',
                     name: this.props.name,
-                    checked: !this.props.checked,
-                },
+                    checked: !this.props.checked
+                }
             });
         }
     }
@@ -51,7 +51,7 @@ export default class Sweetcherry extends React.Component {
             return [
                 `border ${this.props.speed}`,
                 `box-shadow ${this.props.speed}`,
-                `background-color ${this.props.speed.replace(/[a-z]/, '') * 3}s`,
+                `background-color ${this.props.speed.replace(/[a-z]/, '') * 3}s`
             ].join(', ');
         } else {
             return `border ${this.props.speed}, box-shadow ${this.props.speed}`;
@@ -78,7 +78,7 @@ export default class Sweetcherry extends React.Component {
         : this.props.secondaryColor,
             boxShadow: `inset 0 0 0 ${boxShadow}`,
             transition: this.getSwitcherTransition(),
-            opacity: this.props.disabled ? this.props.disabledOpacity : 1,
+            opacity: this.props.disabled ? this.props.disabledOpacity : 1
         };
     }
 
@@ -106,7 +106,7 @@ export default class Sweetcherry extends React.Component {
     getJackTransition() {
         return [
             `background-color ${this.props.speed}`,
-            `left ${this.props.speed.replace(/[a-z]/, '') / 2}s`,
+            `left ${this.props.speed.replace(/[a-z]/, '') / 2}s`
         ].join(', ');
     }
 
@@ -123,7 +123,7 @@ export default class Sweetcherry extends React.Component {
         ? this.props.jackColor
         : jackSecondaryColor,
             left: this.getJackOffset(),
-            transition: this.getJackTransition(),
+            transition: this.getJackTransition()
         };
     }
 
