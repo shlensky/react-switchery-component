@@ -2,9 +2,58 @@
   "name": "sweetcherry",
   "version": "0.0.1",
   "description": "Clone of Switchery adapted for React.",
-  "main": "index.js",
+  "peerDependencies": {
+    "react": ">=0.14.0 <17.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.0.1",
+    "eslint": "^3.3.1",
+    "eslint-plugin-react": "^6.1.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
+    "npm-run-all": "^4.0.2",
+    "prettier": "^1.5.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^2.0.1"
+  },
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "npm run clean",
+    "build": "run-p build:**",
+    "build:es": "cross-env BABEL_ENV=es rollup -c -i src/index.js -o es/index.js",
+    "build:cjs": "cross-env BABEL_ENV=cjs rollup -c -i src/index.js -o lib/index.js",
+    "build:umd:prod": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c rollup.umd.config.js -i src/index.js -o dist/sweetcherry.min.js",
+    "build:umd:dev": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c rollup.umd.config.js -i src/index.js -o dist/sweetcherry.js",
+    "clean": "rimraf es && rimraf lib && rimraf dist",
+    "lint": "eslint src",
+    "prepare": "npm run build",
+    "precommit": "lint-staged && run-p build:umd:** && git add dist",
+    "prerelease": "npm run lint",
+    "release:patch": "npm run prerelease && npm version patch && npm publish && git push --follow-tags",
+    "release:minor": "npm run prerelease && npm version minor && npm publish && git push --follow-tags",
+    "release:major": "npm run prerelease && npm version major && npm publish && git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -15,7 +64,8 @@
     "react",
     "switch"
   ],
-  "author": "Dmitry Shlensky",
+  "author": "Dmitry Shlensky <shld@list.ru>",
+
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/shlensky/sweetcherry/issues"
