@@ -64,9 +64,15 @@ var possibleConstructorReturn = function (self, call) {
 var Sweetcherry = function (_React$Component) {
     inherits(Sweetcherry, _React$Component);
 
-    function Sweetcherry() {
+    function Sweetcherry(props) {
         classCallCheck(this, Sweetcherry);
-        return possibleConstructorReturn(this, _React$Component.apply(this, arguments));
+
+        var _this = possibleConstructorReturn(this, _React$Component.call(this, props));
+
+        _this.state = {
+            mounted: false
+        };
+        return _this;
     }
 
     Sweetcherry.prototype.onClick = function onClick() {

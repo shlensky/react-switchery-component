@@ -32,6 +32,14 @@ export default class Sweetcherry extends React.Component {
         size: 'default'
     };
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            mounted: false
+        };
+    }
+
     onClick() {
         if (this.props.disabled) return;
 
