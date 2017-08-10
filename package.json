@@ -1,0 +1,24 @@
+{
+  "name": "sweetcherry",
+  "version": "0.0.1",
+  "description": "Clone of Switchery adapted for React.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shlensky/sweetcherry.git"
+  },
+  "keywords": [
+    "switchery",
+    "react",
+    "switch"
+  ],
+  "author": "Dmitry Shlensky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shlensky/sweetcherry/issues"
+  },
+  "homepage": "https://github.com/shlensky/sweetcherry#readme"
+}
