@@ -1,5 +1,5 @@
 Sweetcherry
 ===========
 
-Clone of [Switchery](https://github.com/abpetkov/switchery) adopted for React.
+Clone of [Switchery](https://github.com/abpetkov/switchery) adapted for React.
 

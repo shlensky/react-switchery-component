@@ -31,7 +31,8 @@
   "files": [
     "es",
     "lib",
-    "dist"
+    "dist",
+    "sweetcherry.css"
   ],
   "dependencies": {
     "prop-types": "^15.5.10"
