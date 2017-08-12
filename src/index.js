@@ -17,7 +17,8 @@ export default class Sweetcherry extends React.Component {
         size: PropTypes.string,
         checked: PropTypes.bool,
         onChange: PropTypes.func,
-        name: PropTypes.string
+        name: PropTypes.string,
+        id: PropTypes.string
     };
 
     static defaultProps = {
