@@ -146,8 +146,26 @@ var Sweetcherry = function (_React$Component) {
         this.setState({ mounted: true });
     };
 
-    Sweetcherry.prototype.render = function render() {
+    // Add hidden checkbox to allow referencing from <label>
+
+
+    Sweetcherry.prototype.renderCheckbox = function renderCheckbox() {
         var _this2 = this;
+
+        return React.createElement('input', {
+            type: 'checkbox',
+            onChange: function onChange() {
+                return _this2.onClick();
+            },
+            id: this.props.id,
+            checked: this.props.checked,
+            disabled: this.props.disabled,
+            style: { display: 'none' }
+        });
+    };
+
+    Sweetcherry.prototype.render = function render() {
+        var _this3 = this;
 
         var classNames = [this.props.className];
         if (this.props.size) classNames.push(this.props.className + '-' + this.props.size);
@@ -158,15 +176,16 @@ var Sweetcherry = function (_React$Component) {
                 className: classNames.join(' '),
                 style: this.getSwitcherStyles(),
                 onClick: function onClick() {
-                    return _this2.onClick();
+                    return _this3.onClick();
                 },
                 ref: function ref(node) {
-                    return _this2.switcher = node;
+                    return _this3.switcher = node;
                 } },
+            this.props.id ? this.renderCheckbox() : '',
             React.createElement('small', {
                 style: this.getJackStyles(),
                 ref: function ref(node) {
-                    return _this2.jack = node;
+                    return _this3.jack = node;
                 }
             })
         );
@@ -187,7 +206,8 @@ Sweetcherry.propTypes = {
     size: PropTypes.string,
     checked: PropTypes.bool,
     onChange: PropTypes.func,
-    name: PropTypes.string
+    name: PropTypes.string,
+    id: PropTypes.string
 };
 Sweetcherry.defaultProps = {
     color: '#64bd63',

@@ -1,6 +1,7 @@
-Sweetcherry (React switch component).
+Sweetcherry
 ===========
 
+React switch component.
 Clone of [Switchery](https://github.com/abpetkov/switchery) rewritten for React.
 
 ## Install
