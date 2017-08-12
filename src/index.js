@@ -142,6 +142,20 @@ export default class Sweetcherry extends React.Component {
         this.setState({ mounted: true });
     }
 
+    // Add hidden checkbox to allow referencing from <label>
+    renderCheckbox() {
+        return (
+            <input
+                type="checkbox"
+                onChange={() => this.onClick()}
+                id={this.props.id}
+                checked={this.props.checked}
+                disabled={this.props.disabled}
+                style={{ display: 'none' }}
+            />
+        );
+    }
+
     render() {
         let classNames = [this.props.className];
         if (this.props.size)
@@ -153,6 +167,8 @@ export default class Sweetcherry extends React.Component {
                 style={this.getSwitcherStyles()}
                 onClick={() => this.onClick()}
                 ref={node => (this.switcher = node)}>
+                {this.props.id ? this.renderCheckbox() : ''}
+
                 <small
                     style={this.getJackStyles()}
                     ref={node => (this.jack = node)}

@@ -16,25 +16,42 @@ class MyComponent extends React.Component {
         return (
             <div>
                 <p>
-                    <label htmlFor="basic">Basic example:</label>
-                    <Switch id="basic"
+                    <label htmlFor="basic-example">Basic example:</label>
+                    <Switch id="basic-example"
                             checked={this.state.isChecked}
                             onChange={(e) => this.handleChange(e)} />
                 </p>
 
                 <p>
-                    <label>Different color:</label>
-                    <Switch color="#4c3fa2" checked={this.state.isChecked} onChange={(e) => this.handleChange(e)} />
+                    <label htmlFor="color-example">Different color:</label>
+                    <Switch id="color-example"
+                            color="#4c3fa2"
+                            checked={this.state.isChecked}
+                            onChange={(e) => this.handleChange(e)} />
                 </p>
 
                 <p>
-                    <label>Different size:</label>
-                    <Switch size="small" checked={this.state.isChecked} onChange={(e) => this.handleChange(e)} />
+                    <label htmlFor="size-example">Different size:</label>
+                    <Switch id="size-example"
+                            size="small"
+                            checked={this.state.isChecked}
+                            onChange={(e) => this.handleChange(e)} />
                 </p>
 
                 <p>
-                    <label>Different speed:</label>
-                    <Switch speed="2s" checked={this.state.isChecked} onChange={(e) => this.handleChange(e)} />
+                    <label htmlFor="speed-example">Different speed:</label>
+                    <Switch id="speed-example"
+                            speed="2s"
+                            checked={this.state.isChecked}
+                            onChange={(e) => this.handleChange(e)} />
+                </p>
+
+                <p>
+                    <label htmlFor="disabled-example">Disabled:</label>
+                    <Switch id="disabled-example"
+                            disabled={true}
+                            checked={this.state.isChecked}
+                            onChange={(e) => this.handleChange(e)} />
                 </p>
             </div>
         );
