@@ -1,6 +1,6 @@
 {
   "name": "sweetcherry",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Clone of Switchery rewritten for React.",
   "peerDependencies": {
     "react": ">=0.14.0 <17.0.0"
