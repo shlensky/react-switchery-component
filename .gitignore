@@ -3,3 +3,4 @@
 lib
 es
 node_modules
+example/bundle.js

@@ -47,6 +47,7 @@
     "build:cjs": "cross-env BABEL_ENV=cjs rollup -c -i src/index.js -o lib/index.js",
     "build:umd:prod": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c rollup.umd.config.js -i src/index.js -o dist/sweetcherry.min.js",
     "build:umd:dev": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c rollup.umd.config.js -i src/index.js -o dist/sweetcherry.js",
+    "build:example": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c example/rollup.config.js -i example/index.js -o example/bundle.js",
     "clean": "rimraf es && rimraf lib && rimraf dist",
     "lint": "eslint src",
     "prepare": "npm run build",

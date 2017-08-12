@@ -162,11 +162,13 @@ var Sweetcherry = function (_React$Component) {
                 },
                 ref: function ref(node) {
                     return _this2.switcher = node;
-                }
-            },
-            React.createElement('small', { style: this.getJackStyles(), ref: function ref(node) {
+                } },
+            React.createElement('small', {
+                style: this.getJackStyles(),
+                ref: function ref(node) {
                     return _this2.jack = node;
-                } })
+                }
+            })
         );
     };
 
