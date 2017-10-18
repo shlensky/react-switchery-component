@@ -1,19 +1,19 @@
-Sweetcherry
-===========
+react-switchery-component
+=========================
 
 React switch component.
 Clone of [Switchery](https://github.com/abpetkov/switchery) rewritten for React.
 
 ## Install
 
-`npm install sweetcherry`
+`npm install react-switchery-component`
 
 ## Usage
 
 ```javascript
 import React from 'react';
-import Switch from 'sweetcherry';
-import 'sweetcherry/sweetcherry.css';
+import Switch from 'react-switchery-component';
+import 'react-switchery-component/react-switchery-component.css';
 
 class MyComponent extends React.Component {
     constructor(props) {

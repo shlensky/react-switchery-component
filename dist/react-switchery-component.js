@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('react'), require('prop-types')) :
 	typeof define === 'function' && define.amd ? define(['react', 'prop-types'], factory) :
-	(global.Sweetcherry = factory(global.React,global.PropTypes));
+	(global.reactSwitcheryComponent = factory(global.React,global.PropTypes));
 }(this, (function (React,PropTypes) { 'use strict';
 
 React = React && React.hasOwnProperty('default') ? React['default'] : React;
@@ -61,11 +61,11 @@ var possibleConstructorReturn = function (self, call) {
  * React switch input component.
  */
 
-var Sweetcherry = function (_React$Component) {
-    inherits(Sweetcherry, _React$Component);
+var Switchery = function (_React$Component) {
+    inherits(Switchery, _React$Component);
 
-    function Sweetcherry(props) {
-        classCallCheck(this, Sweetcherry);
+    function Switchery(props) {
+        classCallCheck(this, Switchery);
 
         var _this = possibleConstructorReturn(this, _React$Component.call(this, props));
 
@@ -75,7 +75,7 @@ var Sweetcherry = function (_React$Component) {
         return _this;
     }
 
-    Sweetcherry.prototype.onClick = function onClick() {
+    Switchery.prototype.onClick = function onClick() {
         if (this.props.disabled) return;
 
         if (this.props.onChange) {
@@ -89,7 +89,7 @@ var Sweetcherry = function (_React$Component) {
         }
     };
 
-    Sweetcherry.prototype.getSwitcherTransition = function getSwitcherTransition() {
+    Switchery.prototype.getSwitcherTransition = function getSwitcherTransition() {
         if (this.props.checked) {
             return ['border ' + this.props.speed, 'box-shadow ' + this.props.speed, 'background-color ' + this.props.speed.replace(/[a-z]/, '') * 3 + 's'].join(', ');
         } else {
@@ -97,13 +97,13 @@ var Sweetcherry = function (_React$Component) {
         }
     };
 
-    Sweetcherry.prototype.getSwitcherStyles = function getSwitcherStyles() {
+    Switchery.prototype.getSwitcherStyles = function getSwitcherStyles() {
         if (!this.state.mounted) return { display: 'none' };
 
         var switcherHeight = this.switcher ? this.switcher.offsetHeight / 2 : 0;
         var boxShadow = this.props.checked ? switcherHeight + 'px ' + this.props.color : '0 ' + this.props.secondaryColor;
 
-        var secondaryColor = this.props.secondaryColor !== Sweetcherry.defaultProps.secondaryColor ? this.props.secondaryColor : '#fff';
+        var secondaryColor = this.props.secondaryColor !== Switchery.defaultProps.secondaryColor ? this.props.secondaryColor : '#fff';
 
         return {
             backgroundColor: this.props.checked ? this.props.color : secondaryColor,
@@ -114,7 +114,7 @@ var Sweetcherry = function (_React$Component) {
         };
     };
 
-    Sweetcherry.prototype.getJackOffset = function getJackOffset() {
+    Switchery.prototype.getJackOffset = function getJackOffset() {
         // When DOM nodes is not mounted we don't know the width of switcher,
         // and can't calculate position of jack if it is enabled.
         if (!this.state.mounted) return 0;
@@ -126,14 +126,14 @@ var Sweetcherry = function (_React$Component) {
         }
     };
 
-    Sweetcherry.prototype.getJackTransition = function getJackTransition() {
+    Switchery.prototype.getJackTransition = function getJackTransition() {
         return ['background-color ' + this.props.speed, 'left ' + this.props.speed.replace(/[a-z]/, '') / 2 + 's'].join(', ');
     };
 
-    Sweetcherry.prototype.getJackStyles = function getJackStyles() {
+    Switchery.prototype.getJackStyles = function getJackStyles() {
         if (!this.state.mounted) return {};
 
-        var jackSecondaryColor = this.props.jackSecondaryColor !== Sweetcherry.defaultProps.jackColor ? this.props.jackSecondaryColor : this.props.jackColor;
+        var jackSecondaryColor = this.props.jackSecondaryColor !== Switchery.defaultProps.jackColor ? this.props.jackSecondaryColor : this.props.jackColor;
 
         return {
             backgroundColor: this.props.checked ? this.props.jackColor : jackSecondaryColor,
@@ -142,14 +142,14 @@ var Sweetcherry = function (_React$Component) {
         };
     };
 
-    Sweetcherry.prototype.componentDidMount = function componentDidMount() {
+    Switchery.prototype.componentDidMount = function componentDidMount() {
         this.setState({ mounted: true });
     };
 
     // Add hidden checkbox to allow referencing from <label>
 
 
-    Sweetcherry.prototype.renderCheckbox = function renderCheckbox() {
+    Switchery.prototype.renderCheckbox = function renderCheckbox() {
         var _this2 = this;
 
         return React.createElement('input', {
@@ -164,7 +164,7 @@ var Sweetcherry = function (_React$Component) {
         });
     };
 
-    Sweetcherry.prototype.render = function render() {
+    Switchery.prototype.render = function render() {
         var _this3 = this;
 
         var classNames = [this.props.className];
@@ -191,10 +191,10 @@ var Sweetcherry = function (_React$Component) {
         );
     };
 
-    return Sweetcherry;
+    return Switchery;
 }(React.Component);
 
-Sweetcherry.propTypes = {
+Switchery.propTypes = {
     color: PropTypes.string,
     secondaryColor: PropTypes.string,
     jackColor: PropTypes.string,
@@ -209,18 +209,18 @@ Sweetcherry.propTypes = {
     name: PropTypes.string,
     id: PropTypes.string
 };
-Sweetcherry.defaultProps = {
+Switchery.defaultProps = {
     color: '#64bd63',
     secondaryColor: '#dfdfdf',
     jackColor: '#fff',
     jackSecondaryColor: null,
-    className: 'sweetcherry',
+    className: 'switchery',
     disabled: false,
     disabledOpacity: 0.5,
     speed: '0.4s',
     size: 'default'
 };
 
-return Sweetcherry;
+return Switchery;
 
 })));

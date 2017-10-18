@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * React switch input component.
  */
-export default class Sweetcherry extends React.Component {
+export default class Switchery extends React.Component {
     static propTypes = {
         color: PropTypes.string,
         secondaryColor: PropTypes.string,
@@ -26,7 +26,7 @@ export default class Sweetcherry extends React.Component {
         secondaryColor: '#dfdfdf',
         jackColor: '#fff',
         jackSecondaryColor: null,
-        className: 'sweetcherry',
+        className: 'switchery',
         disabled: false,
         disabledOpacity: 0.5,
         speed: '0.4s',
@@ -77,7 +77,7 @@ export default class Sweetcherry extends React.Component {
 
         let secondaryColor =
             this.props.secondaryColor !==
-            Sweetcherry.defaultProps.secondaryColor
+            Switchery.defaultProps.secondaryColor
                 ? this.props.secondaryColor
                 : '#fff';
 
@@ -126,7 +126,7 @@ export default class Sweetcherry extends React.Component {
         if (!this.state.mounted) return {};
 
         let jackSecondaryColor =
-            this.props.jackSecondaryColor !== Sweetcherry.defaultProps.jackColor
+            this.props.jackSecondaryColor !== Switchery.defaultProps.jackColor
                 ? this.props.jackSecondaryColor
                 : this.props.jackColor;
 

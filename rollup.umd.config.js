@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV;
 
 const umdConfig = Object.assign({}, config, {
   format: 'umd',
-  moduleName: 'Sweetcherry',
+  moduleName: 'reactSwitcheryComponent',
   globals: {
     react: 'React',
     'prop-types': 'PropTypes'

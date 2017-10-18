@@ -1,5 +1,5 @@
 {
-  "name": "sweetcherry",
+  "name": "react-switchery-component",
   "version": "0.0.6",
   "description": "React switch component. Clone of Switchery rewritten for React.",
   "peerDependencies": {
@@ -30,7 +30,7 @@
     "es",
     "lib",
     "dist",
-    "sweetcherry.css"
+    "react-switchery-component.css"
   ],
   "dependencies": {
     "prop-types": "^15.5.10"
@@ -43,8 +43,8 @@
     "build": "run-p build:**",
     "build:es": "cross-env BABEL_ENV=es rollup -c -i src/index.js -o es/index.js",
     "build:cjs": "cross-env BABEL_ENV=cjs rollup -c -i src/index.js -o lib/index.js",
-    "build:umd:prod": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c rollup.umd.config.js -i src/index.js -o dist/sweetcherry.min.js",
-    "build:umd:dev": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c rollup.umd.config.js -i src/index.js -o dist/sweetcherry.js",
+    "build:umd:prod": "cross-env BABEL_ENV=es NODE_ENV=production rollup -c rollup.umd.config.js -i src/index.js -o dist/react-switchery-component.min.js",
+    "build:umd:dev": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c rollup.umd.config.js -i src/index.js -o dist/react-switchery-component.js",
     "build:example": "cross-env BABEL_ENV=es NODE_ENV=development rollup -c example/rollup.config.js -i example/index.js -o example/bundle.js",
     "clean": "rimraf es && rimraf lib && rimraf dist",
     "lint": "eslint src",
@@ -56,7 +56,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/shlensky/sweetcherry.git"
+    "url": "git+ssh://git@github.com/shlensky/react-switchery-component.git"
   },
   "keywords": [
     "switchery",
@@ -67,7 +67,7 @@
   "author": "Dmitry Shlensky <shld@list.ru>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shlensky/sweetcherry/issues"
+    "url": "https://github.com/shlensky/react-switchery-component/issues"
   },
-  "homepage": "https://github.com/shlensky/sweetcherry#readme"
+  "homepage": "https://github.com/shlensky/react-switchery-component#readme"
 }

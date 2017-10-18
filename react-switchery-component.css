@@ -1,4 +1,4 @@
-.sweetcherry {
+.switchery {
     background-color: #fff;
     border: 1px solid #dfdfdf;
     border-radius: 20px;
@@ -23,7 +23,7 @@
     background-clip: content-box;
 }
 
-.sweetcherry > small {
+.switchery > small {
     background: #fff;
     border-radius: 100%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -35,24 +35,24 @@
 
 /* sizes. */
 
-.sweetcherry-small {
+.switchery-small {
     border-radius: 20px;
     height: 20px;
     width: 33px;
 }
 
-.sweetcherry-small > small {
+.switchery-small > small {
     height: 20px;
     width: 20px;
 }
 
-.sweetcherry-large {
+.switchery-large {
     border-radius: 40px;
     height: 40px;
     width: 66px;
 }
 
-.sweetcherry-large > small {
+.switchery-large > small {
     height: 40px;
     width: 40px;
 }
